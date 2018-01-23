@@ -80,9 +80,13 @@ void deleteElement(int element)
       break;
       } 
     }
-    (ptr->previous)->next=ptr->next;
-    ptr->next=NULL;
-    printf("\nElement Deleted is %d\n",ptr->data); 
+    if(start->data!=element)
+    {
+     (ptr->previous)->next=ptr->next;
+      ptr->next=NULL;
+    }
+    else
+     start=start->next; 
     forwardDisplayList();
   }
   else printf("\nList is Empty!\n");
